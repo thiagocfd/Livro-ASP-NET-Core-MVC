@@ -15,17 +15,6 @@ namespace Capitulo03.Data
                 return;
             }
 
-            var departamentos = new Departamento[]
-            {
-                new Departamento { Nome="Ciência da Computação"},
-                new Departamento { Nome="Ciência de Alimentos"}
-            };
-
-            foreach (Departamento d in departamentos)
-            {
-                context.Departamentos.Add(d);
-            }
-
             var instituicoes = new Instituicao[]
             {
                 new Instituicao { Nome="UTFPR", Endereco= "Medianeira"},
@@ -36,6 +25,19 @@ namespace Capitulo03.Data
             {
                 context.Instituicoes.Add(i);
             }
+            context.SaveChanges();
+
+            var departamentos = new Departamento[]
+            {
+                new Departamento { Nome="Ciência da Computação", InstituicaoID=1},
+                new Departamento { Nome="Ciência de Alimentos", InstituicaoID=2}
+            };
+
+            foreach (Departamento d in departamentos)
+            {
+                context.Departamentos.Add(d);
+            }
+
             context.SaveChanges();
         }
     }

@@ -22,30 +22,30 @@
 
 
 <div class="card-block">
-    <div class="card-header text-white bg-primary text-center h1">Instituições Registradas</div>
+    <div class="card-header text-white bg-primary text-center h1">Departamentos Registradas</div>
     <div class="card-body">
-        <table id="tabela_instituicoes">
+        <table id="tabela_departamentos">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.DepartamentoID)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.Nome)
                     </th>
-                   
+                    <th>
+                        @Html.DisplayNameFor(model => model.Instituicao.Nome)
+                    </th>
                     <th></th>
                 </tr>
             </thead>
+            
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.DepartamentoID)
+                            @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Nome)
+                            @Html.DisplayFor(modelItem => item.Instituicao.Nome)
                         </td>
                         
                         <td>

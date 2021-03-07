@@ -1,6 +1,7 @@
 ﻿using Capitulo03.Data;
 using Capitulo03.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,18 +17,21 @@ namespace Capitulo03.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Departamentos.OrderBy(c => c.Nome).ToListAsync());
+            return View(await _context.Departamentos.Include(i => i.Instituicao).OrderBy(c => c.Nome).ToListAsync());
         }
 
 
         public IActionResult Create()
         {
+            var instituicoes = _context.Instituicoes.OrderBy(i => i.Nome).ToList();
+            instituicoes.Insert(0, new Instituicao() { InstituicaoID = 0, Nome = "Selecione a instituição" });
+            ViewBag.Instituicoes = instituicoes;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DepartamentoID,Nome")] Departamento departamento)
+        public async Task<IActionResult> Create([Bind("Nome, InstituicaoID")] Departamento departamento)
         {
             try
             {
@@ -53,11 +57,12 @@ namespace Capitulo03.Controllers
                 return NotFound();
             }
 
-            var departamento = await _context.Departamentos.FindAsync(id);
+            var departamento = await _context.Departamentos.SingleOrDefaultAsync(m => m.DepartamentoID == id);
             if (departamento == null)
             {
                 return NotFound();
             }
+            ViewBag.Instituicoes = new SelectList(_context.Instituicoes.OrderBy(b => b.Nome), "InstituicaoID", "Nome", departamento.InstituicaoID);
             return View(departamento);
         }
 
@@ -66,7 +71,7 @@ namespace Capitulo03.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("DepartamentoID,Nome")] Departamento departamento)
+        public async Task<IActionResult> Edit(long? id, [Bind("DepartamentoID, Nome, InstituicaoID")] Departamento departamento)
         {
             if (id != departamento.DepartamentoID)
             {
@@ -93,6 +98,7 @@ namespace Capitulo03.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Instituicoes = new SelectList(_context.Instituicoes.OrderBy(b => b.Nome), "InstituicaoID", "Nome", departamento.InstituicaoID);
             return View(departamento);
         }
 
@@ -104,8 +110,8 @@ namespace Capitulo03.Controllers
                 return NotFound();
             }
 
-            var departamento = await _context.Departamentos
-                .FirstOrDefaultAsync(m => m.DepartamentoID == id);
+            var departamento = await _context.Departamentos.SingleOrDefaultAsync(m => m.DepartamentoID == id);
+            _context.Instituicoes.Where(i => departamento.InstituicaoID == i.InstituicaoID).Load();
             if (departamento == null)
             {
                 return NotFound();
@@ -122,8 +128,8 @@ namespace Capitulo03.Controllers
                 return NotFound();
             }
 
-            var departamento = await _context.Departamentos
-                .FirstOrDefaultAsync(m => m.DepartamentoID == id);
+            var departamento = await _context.Departamentos.SingleOrDefaultAsync(m => m.DepartamentoID == id);
+            _context.Instituicoes.Where(i => departamento.InstituicaoID == i.InstituicaoID).Load();
             if (departamento == null)
             {
                 return NotFound();
@@ -137,10 +143,10 @@ namespace Capitulo03.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id)
         {
-            var departamento = await _context.Departamentos.FindAsync(id);
+            var departamento = await _context.Departamentos.SingleOrDefaultAsync(m => m.DepartamentoID == id);
             _context.Departamentos.Remove(departamento);
+            TempData["Message"] = "Departamento" + departamento.Nome.ToUpper() + " foi removido";
             await _context.SaveChangesAsync();
-            TempData["Message"] = "Departamento " + departamento.Nome.ToUpper() + " foi removida";
             return RedirectToAction(nameof(Index));
         }
 

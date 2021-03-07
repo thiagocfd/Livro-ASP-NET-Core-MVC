@@ -1,12 +1,10 @@
 ﻿@model Capitulo03.Models.Departamento
-
 @{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_LayoutIES.cshtml";
+    Layout = "_LayoutIES";
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-danger text-center h1">Registrando uma novo Departamento</div>
+    <div class="card-header text-white bg-danger text-center h1">Registrando um novo departamento</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,7 +13,10 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            
+            <div class="form-group">
+                <label asp-for="InstituicaoID" class="control-label"></label>
+                <select asp-for="InstituicaoID" class="form-control" asp-items="@(new SelectList(@ViewBag.Instituicoes, "InstituicaoID", "Nome"))"></select>
+            </div>
             <div class="form-group text-center h3">
                 <input type="submit" value="Registrar Departamento" class="btn btn-light" />
                 <a asp-action="Index" class="btn btn-info">Retornar à listagem de departamentos</a>
