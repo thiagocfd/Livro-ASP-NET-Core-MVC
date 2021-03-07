@@ -1,4 +1,4 @@
-﻿@model Capitulo03.Models.Instituicao
+﻿@model Capitulo03.Models.Departamento
 
 @{
     ViewData["Title"] = "Create";
@@ -6,7 +6,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-danger text-center h1">Registrando uma nova instituição</div>
+    <div class="card-header text-white bg-danger text-center h1">Registrando uma novo Departamento</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,14 +15,10 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Endereco" class="control-label"></label>
-                <input asp-for="Endereco" class="form-control" />
-                <span asp-validation-for="Endereco" class="text-danger"></span>
-            </div>
+            
             <div class="form-group text-center h3">
-                <input type="submit" value="Registrar Instituição" class="btn btn-light" />
-                <a asp-action="Index" class="btn btn-info">Retornar à listagem de instituições</a>
+                <input type="submit" value="Registrar Departamento" class="btn btn-light" />
+                <a asp-action="Index" class="btn btn-info">Retornar à listagem de departamentos</a>
             </div>
         </form>
     </div>
