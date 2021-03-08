@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Capitulo03.Models
+namespace Modelo.Cadastros
 {
     public class Instituicao
     {

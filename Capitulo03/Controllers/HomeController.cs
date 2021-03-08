@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Capitulo03.Models;
+using Modelo.Cadastros;
 
 namespace Capitulo03.Controllers
 {

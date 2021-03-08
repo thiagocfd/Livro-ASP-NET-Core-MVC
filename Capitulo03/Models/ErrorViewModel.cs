@@ -1,6 +1,6 @@
 using System;
 
-namespace Capitulo03.Models
+namespace Modelo.Cadastros
 {
     public class ErrorViewModel
     {

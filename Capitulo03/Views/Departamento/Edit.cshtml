@@ -1,4 +1,4 @@
-﻿@model Capitulo03.Models.Departamento
+﻿@model Modelo.Cadastros.Departamento
 
 @{
     ViewData["Title"] = "Edit";
@@ -20,7 +20,7 @@
                 <label asp-for="InstituicaoID" class="control-label"></label>
                 <select asp-for="InstituicaoID" class="form-control" asp-items=@ViewBag.Instituicoes></select>
             </div>
-            
+
             <div class="form-group text-center h3">
                 <input type="submit" value="Atualizar Departamento" class="btn btn-primary" />
                 <a asp-action="Index" class="btn btn-warning">Retornar à listagem de departamentos</a>

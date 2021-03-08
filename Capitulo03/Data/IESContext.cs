@@ -1,5 +1,5 @@
-﻿using Capitulo03.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Modelo.Cadastros;
 
 namespace Capitulo03.Data
 {
