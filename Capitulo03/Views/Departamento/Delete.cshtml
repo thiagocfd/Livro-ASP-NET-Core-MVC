@@ -16,40 +16,9 @@
 
 <div class="card-block">
     <div class="card-header text-white bg-secondary text-center h1">Exibindo uma departamento existente</div>
-    <div class="card-body">
-        <div class="form-group">
-            <label asp-for="DepartamentoID" class="control-label"></label>
-            <br />
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="fa fa-key" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <input asp-for="DepartamentoID" class="form-control" disabled="disabled" />
-            </div>
-            <label asp-for="Nome" class="control-label"></label>
-            <br />
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <input asp-for="Nome" class="form-control" disabled="disabled" />
-            </div>
-            <label asp-for="Instituicao.Nome" class="control-label"></label>
-            <br />
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <input asp-for="Instituicao.Nome" class="form-control" disabled="disabled" />
-            </div>
-        </div>
-    </div>
+
+    @{await Html.RenderPartialAsync("~/Views/Departamento/_PartialDetailsContentCard.cshtml", Model); }
+
     <div class="card-footer bg-info text-center text-white">
         <a asp-action="Index" class="btn btn-danger">Retornar à listagem de Departamentos</a>
         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmationDelete">

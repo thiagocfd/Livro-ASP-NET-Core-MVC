@@ -453,3 +453,8 @@ C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\_ComDepartamentos.cshtml.g.cs
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\bin\Debug\netcoreapp3.1\Modelo.dll
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\bin\Debug\netcoreapp3.1\Modelo.pdb
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Departamento\_PartialDetailsContentCard.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\_PartialDetailsContentCard.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Create.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Delete.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Edit.cshtml.g.cs
