@@ -1,4 +1,6 @@
-﻿namespace Modelo.Cadastros
+﻿using System.Collections.Generic;
+
+namespace Modelo.Cadastros
 {
     public class Departamento
     {
@@ -7,5 +9,7 @@
 
         public long? InstituicaoID { get; set; }
         public Instituicao Instituicao { get; set; }
+
+        public virtual ICollection<Curso> Cursos { get; set; }
     }
 }
