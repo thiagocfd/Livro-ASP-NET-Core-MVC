@@ -458,3 +458,5 @@ C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Create.cshtml.g.cs
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Delete.cshtml.g.cs
 C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Instituicao\Edit.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Academico\Create.cshtml.g.cs
+C:\Users\Thiago Dourado\Documents\TI\Cursos\Livro-aspnet-core-mvc\Capitulo03\obj\Debug\netcoreapp3.1\Razor\Views\Academico\Index.cshtml.g.cs

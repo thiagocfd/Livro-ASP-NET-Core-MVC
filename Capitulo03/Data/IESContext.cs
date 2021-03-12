@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Cadastros;
+using Modelo.Discente;
 
 namespace Capitulo03.Data
 {
@@ -8,6 +9,7 @@ namespace Capitulo03.Data
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Instituicao> Instituicoes { get; set; }
         public DbSet<Curso> Cursos { get; set; }
+        public DbSet<Academico> Academicos { get; set; }
  
 
         public IESContext(DbContextOptions<IESContext> options) : base(options)
